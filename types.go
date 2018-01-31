@@ -49,9 +49,7 @@ func main() {
 	// This is a float64, not 32
 	e := 0.5
 	fmt.Println(reflect.TypeOf(e))
-
-	g := Car{"yo", 3}
-	fmt.Println(g)
+	
 	// types in go must exactly match the required types
 	// there is no implicit conversion
 	var num32 int32
