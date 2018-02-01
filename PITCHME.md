@@ -82,12 +82,13 @@ A programming language
 +++?code=structs_types.go&lang=golang&title=structs_types.go
 
 @[6](An example of type copying. Not the same as an alias.)
-@[10-12, 33-34](This function is an exampe of strict types in Go. myInt is the same as a regular int but won't be accepted.)
+@[10-12](This function is an exampe of strict types in Go. myInt is the same as a regular int but won't be accepted.)
+@[33-34](Call)
 @[15-18](This is how structs are defined as types, no functions are written here.)
-@[21-25, 52](We can emulate constructors using a function that returns an object.)
+@[21-25](We can emulate constructors using a function that returns an object.)
 @[24](Note that it is legal to return a pointer to a local variable. Go performs pointer escape analysis.)
 @[30-31](Here we create an instance of the basic class, all structs members can be brace initialised.)
 @[37-38,42](Go supports the creation of anonymous structs.)
-@[46-49](Anonymous structs can be brace initialised like named ones.)
+@[46-49](Structs can be intialised out of order by naming the members.)
 
 
