@@ -6,8 +6,8 @@ A programming language
 
 ---
 
-@title[Types in go]
-### Basic types in go
+@title[Basic types in go]
+### Basic types in Go
 
 - Go has automatic type deduction for variables, but also allows them to be explicitly typed. This is important in some cases.
 - Types are specified after the variable name.
@@ -27,7 +27,8 @@ A programming language
 
 ---
 
-### Functions in go
+@title[Functions in go]
+### Functions in Go
 
 - Go functions return types are again specified at the end of the declaration before the function body.
 - There is no void in Go, we can simply ommit the return type.
@@ -47,7 +48,8 @@ A programming language
 
 ---
 
-### Collections in go
+@title[Collections in go]
+### Collections in Go
 
 - Go has several built-in collection types:
     * Arrays (string acts similarly)
@@ -73,6 +75,7 @@ A programming language
 
 ---
 
+@title[Structs and user defined types in go]
 ### Structs and user defined types in Go
 
 - Go defines types with the type keyword similiar to typedef.
@@ -93,7 +96,8 @@ A programming language
 
 ---
 
-### Object oriented code (ish)
+@title[Object oriented code in go]
+### Object oriented code (ish) in Go
 
 - Go is an object oriented language in that it allows the creation of structs that "inherit" from one and other, and also have member functions.
 - Go also allows the creation of interfaces.
@@ -114,6 +118,7 @@ A programming language
 
 ---
 
+@title[Interface contracts in go]
 ### Interface contracts in Go
 
 - When passing an object to an interface parameter, a contract is formed.
@@ -130,7 +135,8 @@ A programming language
 
 --- 
 
-### Composition and struct embedding
+@title[Composition and struct embedding in go]
+### Composition and struct embedding in Go
 
 - Go handles composition in a similar way to most languages.
 - You can add a member to a struct, by supplying a name and type.
@@ -150,6 +156,7 @@ A programming language
 
 ---
 
+@title[Closures in go]
 ### Closures in Go
 
 - Go has closures, similar to lambda functions in c++.
@@ -165,6 +172,7 @@ A programming language
 
 ---
 
+@title[Generics in go]
 ### Generics in Go
 
 - Go doesn't have generics like Java or C++.
@@ -181,12 +189,13 @@ we can create interfaces to specify the types that should be passed to a functio
 @[35-38](We can pass both of these objects to the function as they satisfy the interface.)
 @[39-42](Can't pass a regular int as it doesn't satisfy the interface.)
 
----
++++
 
 - Another example would be that all types passed to a sorting algorithm implement the Sortable interface, containing a less than function and are copyable.
 
 ---
 
+@title[Packages in go]
 ### Packages in Go
 
 - Packages are Go's way of organising and encapsulating code.
@@ -198,8 +207,6 @@ we can create interfaces to specify the types that should be passed to a functio
 +++?code=pkg_demos/a_pkg.go&lang=golang&title=pkg_demos/a_pkg.go
 
 Here we can see some types and functions defined in a package.
-
----
 
 +++?code=generics.go&lang=golang&title=generics.go
 
