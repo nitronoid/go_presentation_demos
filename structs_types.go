@@ -12,7 +12,7 @@ func strict(arg myInt) {
 }
 
 // Basic struct type, instances can be constructed wherever this is visible
-type basic struct{
+type basic struct {
 	name string
 	value int
 }
@@ -29,6 +29,9 @@ func main() {
 	// Instance of the basic type
 	obj := basic{"test", 42}
 	fmt.Println(obj)
+
+	strict(myInt{42})
+	//strict(42) //error due to strict typing
 
 	// struct for a pair of int's
 	var pairi struct{first, second int}
