@@ -19,13 +19,13 @@ func (d Dog) Noise() string{
 
 // Provides the safety of a const member function
 // All changes made to the object are local to this function
-func (d Dog) immutable(new string){
-	d.noise = new
+func (d Dog) immutable(newStr string){
+	d.noise = newStr
 }
 
 // This is allowed to modify the original object as we have used a pointer
-func (d *Dog) mutable(new string){
-	d.noise = new
+func (d *Dog) mutable(newStr string){
+	d.noise = newStr
 }
 
 

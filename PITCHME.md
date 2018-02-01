@@ -98,6 +98,7 @@ A programming language
 - Go is an object oriented language in that it allows the creation of structs that inherit from one and other, and also have member functions.
 - Go also allows the creation of interfaces.
 - Inheritence in Go does not work like other languages, types that implement an interface automatically inherit from it.
+- Usually inheritance is described by an is-a relationship, but in Go it is an acts-like relationship.
 
 +++?code=oo_style_1.go&lang=golang&title=oo_style_1.go
 
@@ -110,5 +111,24 @@ A programming language
 @[20-24](This member function makes a copy of the object and acts on that data.)
 @[26-29](This member function acts on the original object through a pointer.)
 @[41-47](Hence the object is unchanged when calling the first, but modified when calling the second.)
+
+---
+
+### Interface contracts in Go
+
+- When passing an object to an interface parameter, a contract is formed.
+- The function that recieves the object checks how the member function calls have been bound.
+- If the member functions have pointer contracts, a pointer must be passed to the interface.
+- If the member functions have been bound by value, the interface can recieve either a pointer or a value.
+
+
++++?code=oo_style_2.go&lang=golang&title=oo_style_2.go
+
+@[11-17](Here we can see the same function being bound with two different contracts.)
+@[25-27](This function takes an interface and will determine the contract from the call to Noise.)
+@[30-31](Here we call the function, this would not work without the &)
+
+
+
 
 

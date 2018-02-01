@@ -12,7 +12,7 @@ type Dog struct{}
 //	return "Pass by value! I mean Woof!"
 //}
 
-func (d *Dog) Noise() string{
+func (d *Dog) Noise() string {
 	return "Pass by pointer! I mean Woof!"
 }
 
@@ -22,7 +22,7 @@ func (d *Dog) Noise() string{
 // a pointer must be provided.
 // However if the function has a value contract, a pass by value is accepted,
 // and a pointer is also accepted (automatically dereferenced)
-func animalNoise(animal Animal){
+func animalNoise(animal Animal) {
 	fmt.Println(animal.Noise())
 }
 
