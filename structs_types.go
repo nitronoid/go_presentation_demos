@@ -17,6 +17,13 @@ type basic struct{
 	value int
 }
 
+// This is perfectly legal, go performs "pointer escape analysis"
+func newBasic(name string, value int) *basic {
+	ret := basic{name, value}
+	//return &basic{name, value} //also valid
+	return &ret
+}
+
 func main() {
 
 	// Instance of the basic type
@@ -38,4 +45,7 @@ func main() {
 		beer : "fosters",
 		}
 	fmt.Println(bar)
+
+	dyn := newBasic("foo", 5)
+	fmt.Println(dyn.name)
 }
