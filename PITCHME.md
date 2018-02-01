@@ -95,9 +95,9 @@ A programming language
 
 ### Object oriented code (ish)
 
-- Go is an object oriented language in that it allows the creation of structs that inherit from one and other, and also have member functions.
+- Go is an object oriented language in that it allows the creation of structs that "inherit" from one and other, and also have member functions.
 - Go also allows the creation of interfaces.
-- Inheritence in Go does not work like other languages, types that implement an interface automatically inherit from it.
+- Inheritence in Go does not work like other languages, types that implement an interface automatically "inherit" from it.
 - Usually inheritance is described by an is-a relationship, but in Go it is an acts-like relationship.
 
 +++?code=oo_style_1.go&lang=golang&title=oo_style_1.go
@@ -128,7 +128,59 @@ A programming language
 @[25-27](This function takes an interface and will determine the contract from the call to Noise.)
 @[30-31](Here we call the function, this would not work without the &.)
 
+--- 
+
+### Composition and struct embedding
+
+- Go handles composition in a similar way to most languages.
+- You can add a member to a struct, by supplying a name and type.
+- Go also offers us struct embedding. Which is used by only giving a type.
+- Embedding can be used to simulate inheritence from other languages, but is still composition.
+
++++?code=oo_style_3.go&lang=golang&title=oo_style_3.go
+
+@[9-16](A simple struct with one member function.)
+@[19-21](Driveway has a member of type Car, standard composition.)
+@[39-42](Access to the members data and functions is through the member.)
+@[24-28](Now we use struct embedding by omiting the members name.)
+@[44-47](We can access Cars data and functions directly through the NewCar type.)
+@[30-33](We can even embed a pointer, which can be used to interesting effect.)
+@[49-53](If we pass a pointer to create a ProxyCar, changes made to the proxy will affect the original car, through the pointer. Similar to a reference.)
+@[55-57](We can still access the embedded part of a struct, like we would with a non-embedded one. This is similar to casting to the base class in other OO languages.)
+
+---
+
+### Closures in Go
+
+- Go has closures, similar to lambda functions in c++.
+- Closures automatically capture all local variables, and go performs analysis on this so that they aren't destroyed when we exit that scope. 
+
++++?code=closures.go&lang=golang&title=closures.go
+
+@[5-13](This function returns a closure.)
+@[6-7](The closure automatically captures these two variables.)
+@[8-12](Using the variables here changes their scope, they won't get destroyed when this closure is returned.)
+@[17-21](We get the returned closure and can call it successivly to mutate the captured variables.)
 
 
+---
+
+### Generics in Go
+
+- Go doesn't have generics like Java or C++.
+- We can emulate them in a very useful and safe way using interfaces.
+- As Go automatically makes types "inherit" from interfaces that they implement,
+we can create interfaces to specify the types that should be passed to a function.
+- The key is that we can request that passed types do something, without having to modify any types that could be passed.
+
++++?code=generics.go&lang=golang&title=generics.go
+
+@[5-9](Here we define the interface that variables must satisfy to be passed into our function. In this case they must convert to a float32.)
+@[26-32](Our function signature requires two Convertible types.)
+@[12-23](Here I defined two structs which implement the Convertible interface.)
+@[35-38](We can pass both of these objects to the function as they satisfy the interface.)
+@[39-42](Can't pass a regular int as it doesn't satisfy the interface.)
+
+- Another example would be that all types passed to a sorting algorithm implement the Sortable interface, containing a less than function and are copyable.
 
 

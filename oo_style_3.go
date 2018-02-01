@@ -35,15 +35,14 @@ type CarProxy struct{
 
 func main() {
 	testCar := Car{"Junk", 42}
-	composition := Driveway{testCar}
-	inheritanceish := NewCar{testCar}
 
 	// Access the parked car in the same way you would expect
+	composition := Driveway{testCar}
 	fmt.Println(composition.parkedCar.name)
 	composition.parkedCar.Honk()
 
-
 	// Access the internal car as though this is a car
+	inheritanceish := NewCar{testCar}
 	fmt.Println(inheritanceish.name)
 	inheritanceish.Honk()
 
@@ -54,7 +53,7 @@ func main() {
 	fmt.Println(testCar.name)
 
 	// We can create a collection of cars by still accessing all of the embedded structs
-	cars := []*Car{&testCar, &composition.parkedCar, &inheritanceish.Car, proxy.Car}
+	cars := []Car{testCar, composition.parkedCar, inheritanceish.Car, *proxy.Car}
 	spew.Printf("%v", cars)
 
 }
