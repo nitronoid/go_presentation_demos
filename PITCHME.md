@@ -126,7 +126,7 @@ A programming language
 
 @[11-17](Here we can see the same function being bound with two different contracts.)
 @[25-27](This function takes an interface and will determine the contract from the call to Noise.)
-@[30-31](Here we call the function, this would not work without the &)
+@[30-31](Here we call the function, this would not work without the &.)
 
 
 
