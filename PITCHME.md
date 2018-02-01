@@ -181,6 +181,32 @@ we can create interfaces to specify the types that should be passed to a functio
 @[35-38](We can pass both of these objects to the function as they satisfy the interface.)
 @[39-42](Can't pass a regular int as it doesn't satisfy the interface.)
 
+---
+
 - Another example would be that all types passed to a sorting algorithm implement the Sortable interface, containing a less than function and are copyable.
+
+---
+
+### Packages in Go
+
+- Packages are Go's way of organising and encapsulating code.
+- The main package must contain a file with a main function to run.
+- Other packages can contain classes and functions to be used outside of that package.
+- Every directory should contain at most one package that matches the directory name.
+- Things can only be accessed from outside the package if they are exported, which is done by starting that data with a capital letter.
+
++++?code=pkg_demos/a_pkg.go&lang=golang&title=pkg_demos/a_pkg.go
+
+Here we can see some types and functions defined in a package.
+
+---
+
++++?code=generics.go&lang=golang&title=generics.go
+
+@[5](We can use an alias to refer to an imported package.)
+@[11-12](Only call functions with captial letter.)
+@[15](We can only used named intialisation for members that are exported.)
+@[19,22](We can't intialise a member if it an instance of a non-exported type, even if that member itself is exported. However we can still access the member.)
+
 
 
