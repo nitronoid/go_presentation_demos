@@ -26,7 +26,7 @@ func main() {
 	sliceI = append(sliceI[:i], sliceI[i+1:]...)
 	fmt.Println("Length:", len(sliceI), "Elements:", sliceI)
 
-	// Delete without preserving order by swapping
+	// Delete without preserving order by assigning the last
 	sliceI[i] = sliceI[len(sliceI)-1]
 	sliceI = sliceI[:len(sliceI)-1]
 	fmt.Println("Length:", len(sliceI), "Elements:", sliceI)
