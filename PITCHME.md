@@ -91,4 +91,24 @@ A programming language
 @[37-38,42](Go supports the creation of anonymous structs.)
 @[46-49](Structs can be intialised out of order by naming the members.)
 
+---
+
+### Object oriented code (ish)
+
+- Go is an object oriented language in that it allows the creation of structs that inherit from one and other, and also have member functions.
+- Go also allows the creation of interfaces.
+- Inheritence in Go does not work like other languages, types that implement an interface automatically inherit from it.
+
++++?code=oo_style_1.go&lang=golang&title=oo_style_1.go
+
+@[5-9](Interfaces in Go are declared with the interface keyword, and only contain function declarations.)
+@[16-18](Here we can see a dog member function. Defined with the special syntax before the function name.)
+@[16](There are two flavours of this as we will soon see.)
+@[11-18](By adding this member function, Dog now implements the Animal interface.)
+@[34-39](This means we can store a Dog within an Animal interface variable.)
+@[20-29](Member functions can either be defined with a pointer contract or with a value contract.)
+@[20-24](This member function makes a copy of the object and acts on that data.)
+@[26-29](This member function acts on the original object through a pointer.)
+@[41-47](Hence the object is unchanged when calling the first, but modified when calling the second.)
+
 
