@@ -38,7 +38,7 @@ A programming language
     * Parameter lists that share type
 - Go doesn't support function overloading or generics.
 
-+++?code=types.go&lang=golang&title=functions.go
++++?code=functions.go&lang=golang&title=functions.go
 
 @[5-12](No overloading.)
 @[14-23](Variadic arguments.)
