@@ -27,7 +27,7 @@ A programming language
 
 ---
 
-# Functions in go
+### Functions in go
 
 - Go functions return types are again specified at the end of the declaration before the function body.
 - There is no void in Go, we can simply ommit the return type.
