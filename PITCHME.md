@@ -59,7 +59,7 @@ A programming language
 
 @[6-13](Arrays have a fixed size, given in the declaration.)
 @[15-17](Slices have a similar syntax but omit the length.)
-@[19-21](Slices can easily be appended to with the standard function. If the slice grows too large for it's currently allocated memory, a new one is returned, hence the assignment.)
+@[19-21](Slices can easily be appended to. If the slice grows too large for it's currently allocated memory, a new one is returned, hence the assignment.)
 @[23-27](Deleting from a slice is strangely complicated. We must cut the slice down to before the element we want to remove, then append all the elements after that one.)
 @[29-32](If the order is unimportant we can swap to back and trim the slice by one.)
 @[34-35](A pitfall is that slices containing pointers won't get GC'd by this approach as the original slice may still exist and reference it. We need to explictly remove the references.)
