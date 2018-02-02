@@ -1,8 +1,28 @@
 
-@title[The go programming language]
-# Go 
+@title[Intro]
+# Jack Diver
+### Go presentation
+#### SDAGE 2nd year 
 
-A programming language
+---
+
+@title[The go programming language]
+# Go overview
+
+- Go was built with simplcity in mind, for general purpose and systems programming in mind. 
+- It is a compiled, statically and strongly typed language. 
+- It supports concurrency and garbage collection out of the box. 
+- Go does not support inheritance in the traditional sense.
+
+---
+
+@title[The history of go]
+# History of Go
+
+- Go devlopment was started in 2007 and announced in 2009.
+- It was developed by Robert Griesemer, Rob Pike and Ken Thompson at google.
+- A shared dislike between the three was of C++'s complexity. 
+- They wanted to create a language that removed common gripes with languages such as C++, Java, python etc... but keep the strong points such as being readable ("light on the page"), being scalable to large systems, and supporting networking.
 
 ---
 
@@ -141,7 +161,7 @@ A programming language
 - Go handles composition in a similar way to most languages.
 - You can add a member to a struct, by supplying a name and type.
 - Go also offers us struct embedding. Which is used by only giving a type.
-- Embedding can be used to simulate inheritence from other languages, but is still composition.
+- Embedding can be used to emmulate inheritence from other languages, but is still composition.
 
 +++?code=oo_style_3.go&lang=golang&title=oo_style_3.go
 
