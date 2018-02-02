@@ -1,7 +1,7 @@
 
 @title[Intro]
-# Jack Diver
-### Go presentation
+# Go presentation 
+### Jack Diver
 #### SDAGE 2nd year 
 
 ---
@@ -9,7 +9,7 @@
 @title[The go programming language]
 # Go overview
 
-- Go was built with simplcity in mind, for general purpose and systems programming in mind. 
+- Go was built with simplicity in mind, for general purpose and systems programming in mind. 
 - It is a compiled, statically and strongly typed language. 
 - It supports concurrency and garbage collection out of the box. 
 - Go does not support inheritance in the traditional sense.
@@ -19,10 +19,7 @@
 @title[The history of go]
 # History of Go
 
-- Go devlopment was started in 2007 and announced in 2009.
-- It was developed by Robert Griesemer, Rob Pike and Ken Thompson at google.
-- A shared dislike between the three was of C++'s complexity. 
-- They wanted to create a language that removed common gripes with languages such as C++, Java, python etc... but keep the strong points such as being readable ("light on the page"), being scalable to large systems, and supporting networking.
+Go development was started in 2007 and announced in 2009. It was developed by Robert Griesemer, Rob Pike and Ken Thompson at google who all  disliked C++'s complexity. They wanted to create a language that removed common gripes with languages such as C++, Java, python etc... but keep the strong points such as being readable ("light on the page"), being scalable to large systems, and supporting networking. Go's tools are all open source.
 
 ---
 
@@ -36,14 +33,14 @@
 +++?code=types.go&lang=golang&title=types.go
 
 @[8-14](Global variable definitions)
-@[17-21](We can delcare multiple variables of different type through one statement)
+@[17-21](We can declare multiple variables of different type through one statement)
 @[23-27](The same is done for constants, where const replaces var)
-@[30-36](Here we compare three different syntax used for delcaring variables)
+@[30-36](Here we compare three different syntax used for declaring variables)
 @[31](Automatically determined type)
 @[33-34](Declaration requires type and will be given a zero value. Then we can assign later.)
 @[36](The var keyword can be omitted completely for local variables if we use the := syntax.)
 @[49-51](Using type deduction with floating point numbers yeilds a double precision variable. There are no float32 literals.)
-@[53-58](Go has very strict typing with no implict conversions, even between integral types. All conversions must be explicit.)
+@[53-58](Go has very strict typing with no implicit conversions, even between integral types. All conversions must be explicit.)
 
 ---
 
@@ -51,7 +48,7 @@
 ### Functions in Go
 
 - Go functions return types are again specified at the end of the declaration before the function body.
-- There is no void in Go, we can simply ommit the return type.
+- There is no void in Go, we can simply omit the return type.
 - Go supports:
     * Returning multiple values
     * Variadic arguments
@@ -98,8 +95,8 @@
 @title[Structs and user defined types in go]
 ### Structs and user defined types in Go
 
-- Go defines types with the type keyword similiar to typedef.
-- These can be copies of exisiting types or newly defined structs.
+- Go defines types with the type keyword similar to typedef.
+- These can be copies of existing types or newly defined structs.
 - Constructors and destructors don't exist, we use free functions to create new objects if setup is non-trivial.
 
 +++?code=structs_types.go&lang=golang&title=structs_types.go
@@ -112,7 +109,7 @@
 @[24](Note that it is legal to return a pointer to a local variable. Go performs pointer escape analysis.)
 @[30-31](Here we create an instance of the basic class, all structs members can be brace initialised.)
 @[37-38,42](Go supports the creation of anonymous structs.)
-@[46-49](Structs can be intialised out of order by naming the members.)
+@[46-49](Structs can be initialised out of order by naming the members.)
 
 ---
 
@@ -121,8 +118,8 @@
 
 - Go is an object oriented language in that it allows the creation of structs that "inherit" from one and other, and also have member functions.
 - Go also allows the creation of interfaces.
-- Inheritence in Go does not work like other languages, types that implement an interface automatically "inherit" from it.
-- Usually inheritance is described by an is-a relationship, but in Go it is an acts-like relationship.
+- Polymorphism in Go does not work like other languages, types that implement an interface automatically "inherit" from it.
+- Inheritance is described by an is-a relationship, but in Go we go straight to polymorphism's acts-like relationship.
 
 +++?code=oo_style_1.go&lang=golang&title=oo_style_1.go
 
@@ -142,9 +139,9 @@
 ### Interface contracts in Go
 
 - When passing an object to an interface parameter, a contract is formed.
-- The function that recieves the object checks how the member function calls have been bound.
+- The function that receives the object checks how the member function calls have been bound.
 - If the member functions have pointer contracts, a pointer must be passed to the interface.
-- If the member functions have been bound by value, the interface can recieve either a pointer or a value.
+- If the member functions have been bound by value, the interface can receive either a pointer or a value.
 
 
 +++?code=oo_style_2.go&lang=golang&title=oo_style_2.go
@@ -161,7 +158,7 @@
 - Go handles composition in a similar way to most languages.
 - You can add a member to a struct, by supplying a name and type.
 - Go also offers us struct embedding. Which is used by only giving a type.
-- Embedding can be used to emmulate inheritence from other languages, but is still composition.
+- Embedding can be used to emulate inheritance from other languages, but is still composition.
 
 +++?code=oo_style_3.go&lang=golang&title=oo_style_3.go
 
@@ -179,7 +176,7 @@
 @title[Closures in go]
 ### Closures in Go
 
-- Go has closures, similar to lambda functions in c++.
+- Go has closures, similar to lambda functions in C++.
 - Closures automatically capture all local variables, and go performs analysis on this so that they aren't destroyed when we exit that scope. 
 
 +++?code=closures.go&lang=golang&title=closures.go
@@ -187,7 +184,7 @@
 @[5-13](This function returns a closure.)
 @[6-7](The closure automatically captures these two variables.)
 @[8-12](Using the variables here changes their scope, they won't get destroyed when this closure is returned.)
-@[17-21](We get the returned closure and can call it successivly to mutate the captured variables.)
+@[17-21](We get the returned closure and can call it successively to mutate the captured variables.)
 
 
 ---
@@ -211,7 +208,7 @@ we can create interfaces to specify the types that should be passed to a functio
 
 +++
 
-- Another example would be that all types passed to a sorting algorithm implement the Sortable interface, containing a less than function and are copyable.
+- Another example would be that all types passed to a sorting algorithm implement the Sortable interface, containing a less than function and are copy-able.
 
 ---
 
@@ -241,8 +238,8 @@ Here we can see some types and functions defined in a package.
 ### Concurrency in Go
 
 - Go gives us the keyword go to create subroutines.
-- Placing go infront of a statement will execute that concurrently.
-- We are also given channels which can be used to syncronise routines and also send messages between them.
+- Placing go in-front of a statement will execute that concurrently.
+- We are also given channels which can be used to synchronise routines and also send messages between them.
 
 +++?code=concurrency.go&lang=golang&title=concurrency.go
 
@@ -257,7 +254,32 @@ Here we can see some types and functions defined in a package.
 @[8](Channels can be limited to only sending or only receiving messages, note the placement of <-. )
 @[12](This line waits here until a message is received and then assigns it to m.)
 @[16](This sends our message through the sender channel.)
-@[28-30](By setting up to routines with reversed channels we can get them to ping pong agains eachother.)
+@[28-30](By setting up to routines with reversed channels we can get them to ping pong against each-other.)
 @[32-33](This line sends the intial signal to start the pinging.)
+
+
+---
+
+@title[Resources]
+### Resources
+
+- [Golang documentation](https://golang.org/doc/)
+- [A Tour of Go](https://tour.golang.org)
+- [Go by example](https://gobyexample.com/)
+- [Stack overflow](https://stackoverflow.com/questions/tagged/go)
+
+---
+
+@title[References]
+### References
+- [Introduction to Go Structures and Data Instances, Karl Seguin, 2013](http://openmymind.net/Introduction-To-Go-Structures-Data-Instances/)
+- [Introduction to programming in Go, Caleb Doxey, 2012](https://www.golang-book.com/books/intro)
+- [Composite literals in Go, Michał Łowicki, 2016](https://medium.com/golangspec/composite-literals-in-go-10dc62eec06a)
+- [Closures are the Generics for Go, Jon Bodner, 2017](https://medium.com/capital-one-developers/closures-are-the-generics-for-go-cb32021fb5b5)
+- [Go interfaces & pointers, Saikiran Yerram, 2016](https://medium.com/@agileseeker/go-interfaces-pointers-4d1d98d5c9c6)
+- [Types in the Go Programming Languag, Vladimir Vivien, 2016](https://medium.com/learning-the-go-programming-language/types-in-the-go-programming-language-65e945d0a692)
+- [Why Go’s structs are superior to class-based inheritance, Ian Macalinao, 2016](https://medium.com/@simplyianm/why-gos-structs-are-superior-to-class-based-inheritance-b661ba897c67)
+
+
 
 
