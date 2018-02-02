@@ -9,7 +9,7 @@
 @title[The go programming language]
 # Go overview
 
-- Go was built with simplicity in mind, for general purpose and systems programming in mind. 
+- Go was built with simplicity in mind, for general purpose and systems programming. 
 - It is a compiled, statically and strongly typed language. 
 - It supports concurrency and garbage collection out of the box. 
 - Go does not support inheritance in the traditional sense.

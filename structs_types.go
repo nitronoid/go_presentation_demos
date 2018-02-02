@@ -30,7 +30,7 @@ func main() {
 	obj := basic{"test", 42}
 	fmt.Println(obj)
 
-	strict(myInt{42})
+	strict(myInt(42))
 	//strict(42) //error due to strict typing
 
 	// struct for a pair of int's
