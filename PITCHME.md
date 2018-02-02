@@ -220,7 +220,7 @@ we can create interfaces to specify the types that should be passed to a functio
 
 - Packages are Go's way of organising and encapsulating code.
 - The main package must contain a file with a main function to run.
-- Other packages can contain classes and functions to be used outside of that package.
+- Other packages can contain types, variables and functions to be used outside of that package.
 - Every directory should contain at most one package that matches the directory name.
 - Things can only be accessed from outside the package if they are exported, which is done by starting that data with a capital letter.
 
@@ -228,7 +228,7 @@ we can create interfaces to specify the types that should be passed to a functio
 
 Here we can see some types and functions defined in a package.
 
-+++?code=generics.go&lang=golang&title=generics.go
++++?code=pkg_demo.go&lang=golang&title=pkg_demo.go
 
 @[5](We can use an alias to refer to an imported package.)
 @[11-12](Only call functions with captial letter.)
