@@ -215,5 +215,29 @@ Here we can see some types and functions defined in a package.
 @[15](We can only used named intialisation for members that are exported.)
 @[19,22](We can't intialise a member if it an instance of a non-exported type, even if that member itself is exported. However we can still access the member.)
 
+---
+
+@title[Concurrency in go]
+### Concurrency in Go
+
+- Go gives us the keyword go to create subroutines.
+- Placing go infront of a statement will execute that concurrently.
+- We are also given channels which can be used to syncronise routines and also send messages between them.
+
++++?code=concurrency.go&lang=golang&title=concurrency.go
+
+@[9-13](Simple function to be executed concurrently.)
+@[16](Logger is thread safe.)
+@[17-19](Here we create 10 threads to print out consecutive integers.)
+
++++?code=channels.go&lang=golang&title=channels.go
+
+@[23-26](Channels can be created using the chan keyword, the type specifier is for the message that will be sent and recieved.)
+@[8-20](This function uses two channels, one for sending messages and one for receiving messages.)
+@[8](Channels can be limited to only sending or only receiving messages, note the placement of <-. )
+@[12](This line waits here until a message is received and then assigns it to m.)
+@[16](This sends our message through the sender channel.)
+@[28-30](By setting up to routines with reversed channels we can get them to ping pong agains eachother.)
+@[32-33](This line sends the intial signal to start the pinging.)
 
 
